@@ -114,7 +114,7 @@ files_to_upload = [
     'resultData.csv', 
     'resultJoint0.jpg', 
     'resultjointset0.jpg', 
-    'resultline.jpg', 
+    # 'resultline.jpg', 
     'stereonetImg.jpg'
 ]
 
