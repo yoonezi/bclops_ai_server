@@ -56,6 +56,7 @@ original_image = "./evalutate/image/input.png"
 ai_image = evaluate()
 print("ai fin")
 output = imageProcessing(original_image, ai_image)
+cv2.imwrite("output.jpg", output)
 # cv2.imshow("output", output)
 
 # 카메라팀
@@ -109,14 +110,18 @@ import boto3
 
 
 files_to_upload = [
-    'redImg.jpg', 
+    #'redImg.jpg', 
     'resultimg.jpg', 
     'resultData.csv', 
-    'resultJoint0.jpg', 
-    'resultjointset0.jpg', 
-    # 'resultline.jpg', 
-    'stereonetImg.jpg'
+    #'resultLine.jpg', 
+    'stereonetImg.jpg',
+    'output.jpg'
 ]
+
+# 'resultjointset' 이미지의 갯수에 따라 파일 이름을 생성하고 리스트에 추가
+for i in range(len(data)): 
+    files_to_upload.append(f'resultjointset{i}.jpg')
+
 
 bucket_name = 'bclopss3'
 
